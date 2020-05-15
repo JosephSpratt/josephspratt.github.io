@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css?family=Libre+Franklin');
+@import url('https://fonts.googleapis.com/css?family=Orbitron');
+/*
+These are colours for other scheme:
+#9888A5
+#445552
+*/
+body{
+    background-color:#A799B7;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 20px;
+}
+h1{
+    color: black;
+    text-align: center;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(left, #A799B7 0%, rgb(214, 198, 231) 50%, #A799B7 100%);
+}
+#playing-table{
+    width: 60%;
+    min-height:30em;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 0.5fr 0.5fr 2fr 0.3fr 0.7fr;
+    background-color:#776472;
+    text-align: center;
+    border-radius: 10%;
+    overflow: auto;
+}
+#welcome-message{
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color:#5b4e66;
+    padding-top: 1rem;
+    font-size: 2rem;
+    font-weight: 750;
+    margin: 0;
+
+}
+#balance-bar{
+    grid-row-start: 2;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color:#294D4A;
+    font-size: 2rem;
+    font-weight: 550;
+    padding: auto;
+}
+#player-text-area-container{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: rgb(214, 198, 231);
+    font-family:'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;  
+}
+#player-score-area{
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    background-color: rgb(181, 162, 202);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+#dealer-text-area-container{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: #c29db9;  
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+}
+#dealer-score-area{
+    grid-row-start: 4;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: #af85a5; 
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.7rem;
+    font-weight: 800;
+}
+#button-area{
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    background-color:#87152a96;   
+}
+#stake-area{
+    font-size: 2rem;
+}
+#bet-amount{
+    border: 3px solid black;
+    display: inline-block;
+    height: 2.5rem;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+
+}
+#bet-amount:focus{
+    border: 3px solid #555;
+    background-color: #4CAF50;
+}
+button {
+    background-color: #294D4A;
+    border: 3px solid black;
+    color: white;
+    padding: 0.6rem 1.4rem;
+    text-align: center;
+    font-size: 16px;
+    margin: 2rem;
+    transition: 0.3s;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+button:hover {
+    background-color: rgb(46, 145, 79);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+button:active {
+    background-color: rgb(36, 75, 49);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+#new-game-button{
+    margin:auto;
+}
+#hit-button{
+    background-color: rgb(131, 39, 36);
+}
+#hit-button:hover{
+    background-color: rgb(199, 21, 15);
+}
+#hit-button:action{
+    background-color: rgb(124, 38, 35);
+}
+
+#doubledown-button{
+    background-color: rgb(173, 161, 54);
+}
+#doubledown-button:hover{
+    background-color: rgb(209, 223, 12);
+}
+#doubledown-button:action{
+    background-color: rgb(181, 192, 20);
+}
+#conan-gif, #hit-gif, #play-gif, #stay-gif{
+    float: right;
+    position: relative;
+    bottom: 25rem;
+}
+#conan-gif2, #hit-gif2, #play-gif2, #stay-gif2{
+    float: left;
+    position: relative;
+    bottom: 25rem;
+}
+#balance-area, #stake-balance-area{
+    display: inline;
+    font-weight: 590;
+}
+#balance-number, #stake-number{
+font-weight: 800;
+color: rgb(201, 8, 8);
+display: inline;
+}
+
+
+
+
+
+
