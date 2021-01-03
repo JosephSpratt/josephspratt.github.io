@@ -12,7 +12,7 @@ $(document).ready(function() {
             dri:"85",
             def:"79",
             phy:"84",
-            headshot:"/images/herons/IMG_0804 2.png"
+            headshot:"/images/herons/IMG_08042.png"
         },
         {
             name: "gibbons",
