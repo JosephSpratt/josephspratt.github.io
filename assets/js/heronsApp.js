@@ -12,7 +12,7 @@ $(document).ready(function() {
             dri:"85",
             def:"79",
             phy:"84",
-            headshot:"/images/herons/64E0AE42-B159-4ECC-80BB-022FC7C30738.png"
+            headshot:"/images/herons/IMG_0804 2.png"
         },
         {
             name: "gibbons",
@@ -24,7 +24,7 @@ $(document).ready(function() {
             dri:"85",
             def:"30",
             phy:"75",
-            headshot:"/images/herons/64E0AE42-B159-4ECC-80BB-022FC7C30738.png"
+            headshot:"/images/herons/IMG_0786.png"
         }, 
         {
             name: "spratt",
@@ -36,7 +36,7 @@ $(document).ready(function() {
             dri:"89",
             def:"23",
             phy:"74",
-            headshot:"/images/herons/64E0AE42-B159-4ECC-80BB-022FC7C30738.png"
+            headshot:"/images/herons/IMG_0668.png"
         },
         {
             name: "fraser",
@@ -48,7 +48,7 @@ $(document).ready(function() {
             dri:"82",
             def:"80",
             phy:"74",
-            headshot:"/images/herons/64E0AE42-B159-4ECC-80BB-022FC7C30738.png"
+            headshot:"/images/herons/IMG_0699.png"
         },
         {
             name: "hyrycz",
@@ -60,7 +60,7 @@ $(document).ready(function() {
             dri:"80",
             def:"93",
             phy:"89",
-            headshot:"/images/herons/64E0AE42-B159-4ECC-80BB-022FC7C30738.png"
+            headshot:"/images/herons/IMG_0804.png"
         }
     ];
 
