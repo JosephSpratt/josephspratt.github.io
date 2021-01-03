@@ -3,7 +3,16 @@ $(document).ready(function() {
     const players = 
     [
         {
-            name : "ramsden"
+            name : "ramsden",
+            pos: "cm",
+            value: "87",
+            pac: "89",
+            sho:"84",
+            pas:"83",
+            dri:"85",
+            def:"79",
+            phy:"82",
+            headshot:"/images/herons/64E0AE42-B159-4ECC-80BB-022FC7C30738.png"
         },
         {
             name: "gibbons"
@@ -23,7 +32,7 @@ $(document).ready(function() {
             <div class="club"><div></div></div>				
         </div>
         
-        <div class="image"></div>
+        <div class="image" style= "background-image: url(${playerSelected.headshot})"></div>
         <div class="backfont">FUT21</div>
     </div>
     <div id="card-bottom">
