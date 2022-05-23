@@ -39,17 +39,17 @@
                                 </div>
                                 <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> Introduction </h3>
 								<p>
-                                    May 12th 2022 saw the price of <a href="https://www.coinbase.com/price/terra-luna">Terra (LUNA)</a> fall 96% in a day. People lost 
+                                    May 12th 2022 saw the price of <a href="https://www.coinbase.com/price/terra-luna" style="color:darkmagenta">Terra (LUNA)</a> fall 96% in a day. People lost 
                                     life savings overnight. The knock on effect sent shockwaves through the crytpo market and saw the prices of Bitcoin, Etherium and Coinbase all down big. 
                                     So much so that even Binance iteself had to suspend trading. For more information on the LUNA crash checkout the follow article: 
-                                    <a href="https://www.coindesk.com/learn/the-fall-of-terra-a-timeline-of-the-meteoric-rise-and-crash-of-ust-and-luna/">The Rise and Fall of LUNA.</a> 
+                                    <a href="https://www.coindesk.com/learn/the-fall-of-terra-a-timeline-of-the-meteoric-rise-and-crash-of-ust-and-luna/" style="color:darkmagenta">The Rise and Fall of LUNA.</a> 
                                     The crash got my thinking about price and market visibilty for crypto assets whilst working on internal networks and applications. Could we expose an integration in Salesforce that would 
                                     allow someone to quickly scan or check for an asset using realtime data? For a while I had been wanting to learn some LWC (Lighting Web Components), so I though I would try and build a small 
                                     application that meets this requirement.
                                 </p>
                                 <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> Usage </h3>
                                 <p style="margin-bottom: 1rem;">
-                                    The <a href="https://crypto-tracker-demo-developer-edition.um8.force.com/">Cyrpto Tracker Application</a> allows a user to search for a specific ticker. For example BTC (Bitcoin).
+                                    The <a href="https://crypto-tracker-demo-developer-edition.um8.force.com/" style="color:darkmagenta">Cyrpto Tracker Application</a> allows a user to search for a specific ticker. For example BTC (Bitcoin).
                                     <span class="image">
                                         <img src="../../images/Screenshot 2022-05-23 at 13.58.34.png" style="height: 30rem;" alt="main blog picture">
                                     </span>
@@ -61,9 +61,38 @@
                                     <label style="margin-bottom: 0;">- The current price at the time of page load and 24 hour percentage change.</label>
                                     <label style="margin-bottom: 0;">- A breakdown of price and volumn percent change over the last 24h, 7 days and 30 days.</label>
                                 </p>
-                                <p>The user can freely update or change the ticker. On clicking enter/or the search button the application will dynamically update the chart and other data displayed based on the coin ticker entered. </p>
-							<section class="tiles">
-							</section>
+                                <p style="margin-bottom: 0.5rem;">The user can freely update or change the ticker. On clicking enter or searching for a valid ticker with length >= 3 the application will dynamically update the chart and other data displayed based on the coin ticker entered. 
+                                <em> **** (For mobile viewing the display will not be as visable or clearly formatted. Please view with phone horizontally).</em> 
+                                </p>
+                                <p>Lastly, the user will be able to see the top trending coins for the last 24 hours scrolling along the bottom of the application. The data is a snapshot of each specific trending coin. 
+                                    Which includes the ticker, the price (USD) and the hourly percentage change.
+                                </p>
+                                <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> Technical Details</h3>
+                                <p style="margin-bottom: 0.5rem;">
+                                    The Crypto Tracker Application is hosted on a public page on a Salesforce community in my developer edition org. When it first loads, it authenticates with the two API's I am using to fetch
+                                    the realtime data: <a href="https://min-api.cryptocompare.com/" style="color:darkmagenta">CryptoCompare</a> and <a href="https://rapidapi.com/BraveNewCoin/api/bravenewcoin" style="color:darkmagenta">BraveNewCoin</a>.
+                                    I am storing the client id's and secrets in a custom setting within Salesforce. 
+                                </p>
+                                <p style="margin-bottom: 0.5rem;">After authenticating a call is made to CryptoCompare to fetch the trending coins for the past 24 hours. The data is deserialized into a APEX response class, formatted in the js and passed through to the front end in the form of an array. This can then be passed in a foreach within a marquee tag. 
+                                    <em>(Redundant I know, but for the sake of a small learning project I did not have the patience for custom css)</em> &#128557;.
+                                </p>
+                                <p style="margin-bottom: 0.5rem;">
+                                    On user input there is handler function which listens for keyup events. Once a user hits enter or the input length satisfies (>=3) a call is made to BraveNewCoin. Which returns some data including a coin id (content.id).  <em>****Please see Postman screenshot below.</em>
+                                </p>
+                                <p style="margin-bottom: 0.5rem;">
+                                    <span class="image">
+                                        <img src="../../images/Screenshot 2022-05-23 at 15.25.04.png" style="height: 30rem;" alt="main blog picture">
+                                    </span>
+                                </p>
+                                <p style="margin-bottom: 0.5rem;">
+                                    If successful, the response is chained in a Promise(). Which then uses this content.id in a subsequent request to BraveNewCoin to fetch price/market data. <em>*** Please see Postman screenshot below.</em>
+                                    Data is deserialized as before and returned with getters to the page.
+                                </p>
+                                <p style="margin-bottom: 0.5rem;">
+                                    <span class="image">
+                                        <img src="../../images/Screenshot 2022-05-23 at 15.40.34.png" style="height: 30rem;" alt="main blog picture">
+                                    </span>
+                                </p>
 						</div>
 					</div>
 
