@@ -41,29 +41,31 @@
                                 <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> Introduction </h3>
 								<p>
                                     May 12th 2022 saw the price of <a href="https://www.coinbase.com/price/terra-luna" style="color:darkmagenta">Terra (LUNA)</a> fall 96% in a day. People lost 
-                                    life savings overnight. The knock on effect sent shockwaves through the crytpo market and saw the prices of Bitcoin, Etherium and Coinbase all tumble. 
-                                    So much so that even Binance iteself had to suspend trading. For more information on the LUNA crash checkout the follow article: 
+                                    life savings overnight. The knock-on effect sent shockwaves through the crypto market and saw the prices of Bitcoin, Ethereum and Coinbase all tumble. 
+                                    So much so that even Binance itself had to suspend trading. For more information on the LUNA crash checkout, the following article: 
                                     <a href="https://www.coindesk.com/learn/the-fall-of-terra-a-timeline-of-the-meteoric-rise-and-crash-of-ust-and-luna/" style="color:darkmagenta">The Rise and Fall of LUNA.</a> 
-                                    The crash got my thinking about price and market visibilty for crypto assets whilst working on internal networks and applications. Could we expose an integration in Salesforce that would 
-                                    allow someone to quickly scan or check for an asset using realtime data? For a while I had been wanting to learn some LWC (Lighting Web Components), so I though I would try and build a small 
+                                    The crash got me thinking about price and market visibility for crypto assets whilst working on internal networks and applications. Could we expose an integration in Salesforce that would 
+                                    allow someone to quickly scan or check for an asset using real-time data? For a while, I had been wanting to learn some LWC (Lighting Web Components), so I thought I would try and build a small 
                                     application that meets this requirement.
                                 </p>
                                 <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> Usage </h3>
                                 <p style="margin-bottom: 1rem;">
-                                    The <a href="https://crypto-tracker-demo-developer-edition.um8.force.com/" style="color:darkmagenta">Cyrpto Tracker Application</a> allows a user to search for a specific ticker. For example BTC (Bitcoin).
+                                    The <a href="https://crypto-tracker-demo-developer-edition.um8.force.com/" style="color:darkmagenta">Crypto Tracker Application</a> allows a user to search for a specific ticker. For example BTC (Bitcoin).
                                     <span class="image main mobile-img-resize">
                                         <img src="../../images/Screenshot 2022-05-23 at 13.58.34.png" alt="main blog picture">
                                     </span>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
                                     This will pull up the following: 
-                                    <label style="margin-bottom: 0;">- Name of coin and link to offical site.</label>
-                                    <label style="margin-bottom: 0;">- The price chart showing the last 24 hours. y-axis: PRICE USD, x-axis: HOURS. </label>
-                                    <label style="margin-bottom: 0;">- The current price at the time of page load and 24 hour percentage change.</label>
-                                    <label style="margin-bottom: 0;">- A breakdown of price and volume percent change over the last 24h, 7 days and 30 days.</label>
+                                    <ul>
+                                        <li style="margin-bottom: 0;"> Name of coin and link to offical site.</li>
+                                        <li style="margin-bottom: 0;"> The price chart showing the last 24 hours. y-axis: PRICE USD, x-axis: HOURS. </li>
+                                        <li style="margin-bottom: 0;"> The current price at the time of page load and 24 hour percentage change.</li>
+                                        <li style="margin-bottom: 0;"> A breakdown of price and volume percent change over the last 24h, 7 days and 30 days.</li>
+                                    </ul>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">The user can freely update or change the ticker. On clicking enter or searching for a valid ticker with length >= 3 the application will dynamically update the chart and other data displayed based on the coin ticker entered. 
-                                <em> **** (For mobile viewing the display will not be as visable or clearly formatted. Please view with phone horizontally).</em> 
+                                <em> **** (For mobile viewing the display will not be as visible or clearly formatted. Please view with the phone horizontally).</em> 
                                 </p>
                                 <p>Lastly, the user will be able to see the top trending coins for the last 24 hours scrolling along the bottom of the application. The data is a snapshot of each specific trending coin. 
                                     Which includes the ticker, the price (USD) and the hourly percentage change.
@@ -78,7 +80,7 @@
                                     <em>(Redundant I know, but for the sake of a small learning project I did not have the patience for custom css)</em> &#128557;.
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
-                                    On user input there is handler function which listens for keyup events. Once a user hits enter or the input length satisfies (>=3) a call is made to BraveNewCoin. Which returns some data including a coin id (content.id).  <em>****Please see Postman screenshot below.</em>
+                                    On user input, there is a handler function which listens for key events. Once a user hits enter or the input length satisfies (>=3) a call is made to BraveNewCoin. Which returns some data including a coin id (content.id).  <em>****Please see Postman screenshot below.</em>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
                                     <span class="image main mobile-img-resize">
@@ -95,9 +97,9 @@
                                     </span>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
-                                    The reason for using two seperate API's is because the free version for both includes different functionality needed for the full application. I began development with BraveNewCoin but then discovered the free 
+                                    The reason for using two separate APIs is because the free version for  both includes different functionality needed for the full application. I began development with BraveNewCoin but then discovered the free 
                                     version did not support asset price history. This meant I would not be able populate data onto a chart to display price change. However, CryptoCompare did. When the second call to BraveNewCoin is made, a call is 
-                                    also made to CryptoCompare to fetch the assest price and volume history. <em>*** Please see Postman screenshot below for Price History example of XRP (Ripple).</em>
+                                    also made to CryptoCompare to fetch the assest price and volume history. <em>*** Please see Postman screenshot below for the Price History example of XRP (Ripple).</em>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
                                     <span class="image main mobile-img-resize">
@@ -117,7 +119,25 @@
                                 <p>
                                     Lastly, I used logic in the js to render colours red/green for percentages and graph fill based on if a price/volume was negative or positive. 
                                 </p>
+                                <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> Github Repo </h3>
+                                <p>
+                                     The code is available at my <a href="https://github.com/JosephSpratt/LWC-Crypto-Tracker" style="color:darkmagenta">Github LWC-Crypto-Tracker Repo </a>.
+                                </p>
                                 <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> Limitations </h3>
+                                <ul>
+                                    <li style="margin-bottom: 0;">
+                                        Yes, the data is real-time but they are free to use api licenses so data can be a little inaccurate at times.
+                                    </li>
+                                   <li style="margin-bottom: 0;">Data is very limited to price/volume metrics. </li>
+                                   <li style="color: #fc5858">Please do not use this application to make any financial/investment decisions. It was purely an experiment to see if an integration of this kind was possible and to learn from.</li>
+                                </ul>
+                                <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> ToDo's </h3>
+                                <ul>
+                                    <li>Clean up code, I was kind of in the headspace of just wanting to get it done once I learnt a few LWC basics. Hence the cleanup is needed.</li>
+                                    <li>Perhaps extend the functionality so users can get price watches/notifications in Salesforce for specific coins.</li>
+                                    <li>There is a bug which causes the scrolling tickers to jump to the start on the first scroll.</li>
+                                    <li>Improve error handling. I am using AuraException handling but it could probably be improved/more in-depth/specific on the front-end.</li>
+                                </ul>
 						</div>
 					</div>
 
