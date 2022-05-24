@@ -65,7 +65,7 @@
                                     </ul>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">The user can freely update or change the ticker. On clicking enter or searching for a valid ticker with length >= 3 the application will dynamically update the chart and other data displayed based on the coin ticker entered. 
-                                <em> **** (For mobile viewing the display will not be as visible or clearly formatted. Please view with the phone horizontally).</em> 
+                                <em style="color: #fc5858"> **** (For mobile viewing the display will not be as visible or clearly formatted. Please view with the phone horizontally).</em> 
                                 </p>
                                 <p>Lastly, the user will be able to see the top trending coins for the last 24 hours scrolling along the bottom of the application. The data is a snapshot of each specific trending coin. 
                                     Which includes the ticker, the price (USD) and the hourly percentage change.
@@ -90,31 +90,36 @@
                                     <em>(Redundant I know, but for the sake of a small learning project I did not have the patience for custom css)</em> &#128557;.
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
-                                    On user input, there is a handler function which listens for key events. Once a user hits enter or the input length satisfies (>=3) a call is made to BraveNewCoin. Which returns some data including a coin id (content.id).  <em>****Please see Postman screenshot below.</em>
+                                    On user input, there is a handler function which listens for key events. Once a user hits enter or the input length satisfies (>=3) a call is made to BraveNewCoin. Which returns some data including a coin id (content.id).  
+                                    <em>****Please see Postman screenshot below (image 1).</em>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
-                                    <span class="image main mobile-img-resize">
+                                    <span class="image main mobile-img-resize" style="margin-bottom: 0;">
                                         <img src="../../images/Screenshot 2022-05-23 at 15.25.04.png" alt="main blog picture">
                                     </span>
+                                    <em style="font-size: smaller;">image 1</em>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
-                                    If successful, the response is chained in a Promise(). Which then uses this content.id in a subsequent request to BraveNewCoin to fetch price/market data. <em>*** Please see Postman screenshot below.</em>
+                                    If successful, the response is chained in a Promise(). Which then uses this content.id in a subsequent request to BraveNewCoin to fetch price/market data. 
+                                    <em>*** Please see Postman screenshot below (image 2).</em>
                                     Data is deserialized as before and returned with getters to the page.
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
-                                    <span class="image main mobile-img-resize">
+                                    <span class="image main mobile-img-resize" style="margin-bottom: 0;">
                                         <img src="../../images/Screenshot 2022-05-23 at 15.40.34.png" alt="main blog picture">
                                     </span>
+                                    <em style="font-size: smaller;">image 2</em>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
                                     The reason for using two separate APIs is because the free version for  both includes different functionality needed for the full application. I began development with BraveNewCoin but then discovered the free 
                                     version did not support asset price history. This meant I would not be able populate data onto a chart to display price change. However, CryptoCompare did. When the second call to BraveNewCoin is made, a call is 
-                                    also made to CryptoCompare to fetch the assest price and volume history. <em>*** Please see Postman screenshot below for the Price History example of XRP (Ripple).</em>
+                                    also made to CryptoCompare to fetch the assest price and volume history. <em>*** Please see Postman screenshot below (image 3) for the Price History example of XRP (Ripple).</em>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
-                                    <span class="image main mobile-img-resize">
+                                    <span class="image main mobile-img-resize" style="margin-bottom: 0;">
                                         <img src="../../images/Screenshot 2022-05-23 at 16.03.38.png" alt="main blog picture">
                                     </span>
+                                    <em style="font-size: smaller;">image 3</em>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
                                     As you can see in the params. The call returns the last 24 price hour entries for XRP in USD. One thing here to note is that the time is given as a Unix Timestamp. A tool 
@@ -128,12 +133,13 @@
                                 </p>
                                 <p>
                                     Lastly, I used logic in the js to render colours red/green for percentages and graph fill based on if a price/volume was negative or positive. To format/style the page I mostly used the <a href="https://www.lightningdesignsystem.com/" style="color:darkmagenta">Lightning Design System</a>
-                                    leaning a lot on 'slds-grid' in particular. <em>*** See examples below.</em>
+                                    leaning a lot on 'slds-grid' in particular. <em>*** See html screenshot below (image 4).</em>
                                 </p>
-                                <p style="margin-bottom: 0.5rem;">
-                                    <span class="image main mobile-img-resize">
+                                <p style="margin-bottom: 1rem;">
+                                    <span class="image main mobile-img-resize" style="margin-bottom: 0;">
                                         <img src="../../images/Screenshot 2022-05-24 at 10.27.07.png" alt="main blog picture">
                                     </span>
+                                    <em style="font-size: smaller;">image 4</em>
                                 </p>
                                 <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> Github Repo </h3>
                                 <p>
