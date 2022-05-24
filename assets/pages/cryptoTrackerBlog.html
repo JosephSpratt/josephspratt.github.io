@@ -40,13 +40,15 @@
                                 </div>
                                 <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> Introduction </h3>
 								<p>
-                                    May 12th 2022 saw the price of <a href="https://www.coinbase.com/price/terra-luna" style="color:darkmagenta">Terra (LUNA)</a> fall 96% in a day. People lost 
+                                    May 12th 2022 saw the price of <a href="https://www.coinbase.com/price/terra-luna" style="color:darkmagenta">Terra (LUNA)</a> fall 96% in a day. $1,000,000 invested before the crash is now worth around $3. People lost 
                                     life savings overnight. The knock-on effect sent shockwaves through the crypto market and saw the prices of Bitcoin, Ethereum and Coinbase all tumble. 
-                                    So much so that even Binance itself had to suspend trading. For more information on the LUNA crash checkout, the following article: 
-                                    <a href="https://www.coindesk.com/learn/the-fall-of-terra-a-timeline-of-the-meteoric-rise-and-crash-of-ust-and-luna/" style="color:darkmagenta">The Rise and Fall of LUNA.</a> 
+                                    So much so that even Binance itself had to suspend trading. 
                                     The crash got me thinking about price and market visibility for crypto assets whilst working on internal networks and applications. Could we expose an integration in Salesforce that would 
                                     allow someone to quickly scan or check for an asset using real-time data? For a while, I had been wanting to learn some LWC (Lighting Web Components), so I thought I would try and build a small 
                                     application that meets this requirement.
+                                    For more information on the LUNA crash checkout, the following article: 
+                                    <a href="https://www.coindesk.com/learn/the-fall-of-terra-a-timeline-of-the-meteoric-rise-and-crash-of-ust-and-luna/" style="color:darkmagenta">The Rise and Fall of LUNA</a> 
+                                    and video <a href="https://www.youtube.com/watch?v=3KZY41SqaTI" style="color:darkmagenta">How This Man Just Caused a $45 BILLION Crash [Terra Luna].</a> 
                                 </p>
                                 <h3 style="letter-spacing: 0; margin-bottom: 1rem;"> Usage </h3>
                                 <p style="margin-bottom: 1rem;">
@@ -91,7 +93,7 @@
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
                                     On user input, there is a handler function which listens for key events. Once a user hits enter or the input length satisfies (>=3) a call is made to BraveNewCoin. Which returns some data including a coin id (content.id).  
-                                    <em>****Please see Postman screenshot below (image 1).</em>
+                                    <em style="color: #11c5ed;">****Please see Postman screenshot below (image 1).</em>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
                                     <span class="image main mobile-img-resize" style="margin-bottom: 0;">
@@ -101,7 +103,7 @@
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
                                     If successful, the response is chained in a Promise(). Which then uses this content.id in a subsequent request to BraveNewCoin to fetch price/market data. 
-                                    <em>*** Please see Postman screenshot below (image 2).</em>
+                                    <em style="color: #11c5ed;">*** Please see Postman screenshot below (image 2).</em>
                                     Data is deserialized as before and returned with getters to the page.
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
@@ -113,7 +115,7 @@
                                 <p style="margin-bottom: 0.5rem;">
                                     The reason for using two separate APIs is because the free version for  both includes different functionality needed for the full application. I began development with BraveNewCoin but then discovered the free 
                                     version did not support asset price history. This meant I would not be able populate data onto a chart to display price change. However, CryptoCompare did. When the second call to BraveNewCoin is made, a call is 
-                                    also made to CryptoCompare to fetch the assest price and volume history. <em>*** Please see Postman screenshot below (image 3) for the Price History example of XRP (Ripple).</em>
+                                    also made to CryptoCompare to fetch the assest price and volume history. <em style="color: #11c5ed;">*** Please see Postman screenshot below (image 3) for the Price History example of XRP (Ripple).</em>
                                 </p>
                                 <p style="margin-bottom: 0.5rem;">
                                     <span class="image main mobile-img-resize" style="margin-bottom: 0;">
@@ -133,7 +135,7 @@
                                 </p>
                                 <p>
                                     Lastly, I used logic in the js to render colours red/green for percentages and graph fill based on if a price/volume was negative or positive. To format/style the page I mostly used the <a href="https://www.lightningdesignsystem.com/" style="color:darkmagenta">Lightning Design System</a>
-                                    leaning a lot on 'slds-grid' in particular. <em>*** See html screenshot below (image 4).</em>
+                                    leaning a lot on 'slds-grid' in particular. <em style="color: #11c5ed;">*** See html screenshot below (image 4).</em>
                                 </p>
                                 <p style="margin-bottom: 1rem;">
                                     <span class="image main mobile-img-resize" style="margin-bottom: 0;">
@@ -159,6 +161,7 @@
                                     <li>Perhaps extend the functionality so users can get price watches/notifications in Salesforce for specific coins.</li>
                                     <li>There is a bug which causes the scrolling tickers to jump to the start on the first scroll.</li>
                                     <li>Improve error handling. I am using AuraException handling but it could probably be improved/more in-depth/specific on the front-end.</li>
+                                    <li>Add a label for the x-axis.</li>
                                 </ul>
                                 <p style="margin: 0; margin-top: 2rem; font-size:smaller; font-weight: 600;"><em>Joseph Spratt - 24/05/2022</em></p>
 						</div>
